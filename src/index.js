@@ -1,7 +1,6 @@
-import express from "express";
+import app from './app';
+import './database';
 
-const app = express();
+app.listen(process.env.PORT || app.get('port'));
 
-app.listen('3000');
-
-console.log('Servidor en el puerto', 3000);
+console.log('Servidor en el puerto', app.get('port'));
