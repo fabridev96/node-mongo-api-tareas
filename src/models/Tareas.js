@@ -1,4 +1,5 @@
 import {Schema, model} from 'mongoose';
+import mongoosePaginate from 'mongoose-paginate-v2';
 
 const tareasSchema = new Schema({
 
@@ -21,5 +22,7 @@ const tareasSchema = new Schema({
     versionKey: false,
     timestamps: true
 });
+
+tareasSchema.plugin(mongoosePaginate);
 
 export default model('tarea', tareasSchema);
